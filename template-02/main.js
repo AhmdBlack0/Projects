@@ -18,7 +18,6 @@ let iLeft = document.querySelector(".testimonials .left");
 let bars = document.querySelectorAll(".bars-child");
 let boxDiv = document.querySelectorAll(".testimonials .data");
 
-
 iRight.addEventListener("click", function () {
   const itemsArray = Array.from(bars);
   const activeIndex = itemsArray.findIndex(bars => bars.classList.contains('active'));
@@ -28,7 +27,7 @@ iRight.addEventListener("click", function () {
     boxDiv[activeIndex].classList.add("hidden");
     boxDiv[activeIndex + 1].classList.remove("hidden");
   }
-})
+});
 iLeft.addEventListener("click", function () {
   const itemsArray = Array.from(bars);
   const activeIndex = itemsArray.findIndex(bars => bars.classList.contains('active'));
@@ -38,9 +37,20 @@ iLeft.addEventListener("click", function () {
     boxDiv[activeIndex].classList.add("hidden");
     boxDiv[activeIndex - 1].classList.remove("hidden");
   }
-})
+});
+
+let iBars = document.querySelector(".bars");
+let links = document.querySelector(".links"); // Corrected the selector
+iBars.addEventListener("click", function () {
+  links.classList.toggle("show"); // Toggled the class instead of just adding it
+});
 
 
-
-
-let op = new Date();
+// let popDiv = document.querySelector(".pop");
+// let closeI = document.querySelector(".close");
+// setTimeout(() => {
+//   popDiv.classList.add("show");
+// }, 5000);
+// closeI.addEventListener("click", () => {
+//   popDiv.style.display = "none";
+// })
