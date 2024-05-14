@@ -42,6 +42,36 @@ input {
   background-color: var(--yellow);
   display: none;
 }
+.pop {
+  position: fixed;
+  top: 40px;
+  right: -100px;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.pop.show {
+  right: 40px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.pop span {
+  position: relative;
+}
+.pop span .close {
+  position: absolute;
+  top: -30px;
+  right: -72px;
+  cursor: pointer;
+}
 header {
   background-color: var(--green);
   height: 100vh;
@@ -66,20 +96,42 @@ header nav ul {
   font-weight: bold;
   font-size: 17px;
 }
+.bars {
+  display: none;
+  color: white;
+  cursor: pointer;
+}
+.show {
+  top: 50px;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
 @media (max-width: 767px) {
   header nav {
-    flex-direction: column;
-    padding-top: 20px;
+    justify-content: space-around;
   }
   header nav a i, 
   header nav a h1 {
     font-size: 20px;
   }
   header nav ul {
-    padding-top: 20px;
+    flex-direction: column;
+    background-color: #607D8B;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+    margin-top: 25px;
+    position: absolute;
+    top: -250px;
   }
   header nav ul a {
     font-size: 12px;
+  }
+  .bars {
+    display: block;
   }
 }
 header nav ul a {
@@ -727,6 +779,17 @@ main .solution a {
     height: 5px;
   }
 }
+.news .title {
+  text-align: center;
+  color: var(--yellow);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.news h2 {
+  margin-bottom: 90px;
+  text-align: center;
+  margin-top: 20px;
+}
 .news .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -779,4 +842,11 @@ main .solution a {
 }
 .news .boxes .box .main-btn {
   margin: 40px 0;
+}
+.subscribe {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--green);
+  padding: 50px 0;
 }
