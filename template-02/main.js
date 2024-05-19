@@ -42,7 +42,13 @@ iLeft.addEventListener("click", function () {
 let iBars = document.querySelector(".bars");
 let links = document.querySelector(".links"); // Corrected the selector
 iBars.addEventListener("click", function () {
-  links.classList.toggle("show"); // Toggled the class instead of just adding it
+  if (!links.classList.contains("show")) {
+    links.classList.add("show");
+    links.classList.remove("hidden");
+  } else if (links.classList) {
+    links.classList.add("hidden");
+    links.classList.remove("show");
+  }
 });
 
 

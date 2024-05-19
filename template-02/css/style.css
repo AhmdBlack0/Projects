@@ -42,35 +42,13 @@ input {
   background-color: var(--yellow);
   display: none;
 }
-.pop {
-  position: fixed;
-  top: 40px;
-  right: -100px;
-  background-color: white;
-  color: black;
-  padding: 10px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-.pop.show {
-  right: 40px;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-.pop span {
-  position: relative;
-}
-.pop span .close {
-  position: absolute;
-  top: -30px;
-  right: -72px;
-  cursor: pointer;
+.up-btn i {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 header {
   background-color: var(--green);
@@ -101,6 +79,14 @@ header nav ul {
   color: white;
   cursor: pointer;
 }
+.hidden {
+  top: -250px;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
 .show {
   top: 50px;
   transition: var(--transition);
@@ -108,6 +94,13 @@ header nav ul {
   -moz-transition: var(--transition);
   -ms-transition: var(--transition);
   -o-transition: var(--transition);
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  position: relative;
+  z-index: 1;
 }
 @media (max-width: 767px) {
   header nav {
@@ -835,7 +828,7 @@ main .solution a {
   color: var(--green);
 }
 .news .boxes .box p {
-  width: 320px;
+  width: 250px;
   margin-top: 20px;
   line-height: 1.4;
   color: #546E7A;
@@ -849,4 +842,125 @@ main .solution a {
   align-items: center;
   background-color: var(--green);
   padding: 50px 0;
+  margin-top: 40px;
+}
+.subscribe .sec-one p {
+  color: var(--yellow);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+.subscribe .sec-one h1 {
+  margin-top: 20px;
+  color: white;
+  font-weight: normal;
+  font-size: 28px;
+}
+.subscribe .sec-one h1 .under-line {
+  position: relative;
+  z-index: 2;
+}
+.subscribe .sec-one h1 .under-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 7px;
+  bottom: 2px;
+  right: 0;
+  background-color: var(--yellow);
+  z-index: -1;
+}
+.subscribe .sec-two input {
+  height: 40px;
+  border: none;
+  border: 2px solid var(--yellow);
+}
+.subscribe .sec-two input[type= "email"] {
+  width: 230px;
+  padding-left: 10px;
+  background-color: var(--green);
+  border-right: none;
+  caret-color: white;
+  color: white;
+}
+.subscribe .sec-two input[type= "email"]::placeholder {
+  color: rgb(241 204 97 / 70%);
+}
+.subscribe .sec-two input[type= "submit"] {
+  width: 50px;
+  right: 5px;
+  position: relative;
+  cursor: pointer;
+  border-left: none;
+}
+@media (max-width: 767px) {
+  .subscribe {
+    flex-direction: column;
+  }
+  .subscribe .sec-two {
+    margin-top: 40px;
+  }
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 100px;
+  background-color: var(--yellow);
+}
+footer a {
+  color: black;
+}
+footer .sec-01 {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+footer .sec-01 i {
+  font-size: 30px;
+  background-color: var(--green);
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+}
+footer ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+footer div .name {
+  margin-top: 15px;
+}
+footer .sec-02 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+footer .sec-02 i {
+  font-size: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+footer .sec-02 i:first-child:hover {
+  color: #0a66c2;
+}
+footer .sec-02 i:nth-child(2):hover {
+  color: #0a66c2;
+}
+footer .sec-02 i:nth-child(3):hover {
+  color: #000000;
+}
+footer .sec-02 i:last-child:hover {
+  color: #ff0000;
+}
+@media(max-width: 767px) {
+  footer {
+    flex-direction: column;
+    gap: 45px;
+  }
 }
