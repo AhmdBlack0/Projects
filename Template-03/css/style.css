@@ -520,11 +520,12 @@ main .services .sec-02 {
 }
 main .services .sec-02 .box {
   padding: 50px 30px;
+  outline: 5px solid transparent;
+  border-radius: 130px;
 }
 main .services .sec-02 .box:hover {
-  outline: 5px solid white;
   background-color: var(--gray-color);
-  border-radius: 130px;
+  outline-color: white;
   transition: var(--transition);
   -webkit-transition: var(--transition);
   -moz-transition: var(--transition);
