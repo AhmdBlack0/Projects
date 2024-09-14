@@ -83,26 +83,23 @@ main {
     justify-content: space-around;
 }
 main .sec-01 {
-    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 20px;
 }
-main .sec-01 h1 {
-    font-size: 45px;
+main .sec-01 div h1 {
+    font-size: 33px;
 }
-main .sec-01 p {
+main .sec-01 div p {
     margin-top: 15px;
-    font-size: 23px;
+    font-size: 19px;
     font-style: italic;
 }
 main .sec-01 img {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 280px;
-    width: 150px;
+    width: 120px;
     border-radius: 50%;
-}
-main .sec-02 {
-    margin-top: 160px;
+    order: -1;
 }
 main .sec-02 .card {
     display: flex;
@@ -145,4 +142,24 @@ main .sec-02 .card:nth-child(3) i {
 main .sec-02 .card:nth-child(4) i {
     background-color: #f5e7fe;
     color: #8e33c9;
+}
+@media (max-width: 991px) {
+    main {
+        flex-direction: column;
+        margin-top: 180px;
+    }
+}
+@media (max-width: 767px) {
+    header {
+        right: 70px;
+    }
+    main .sec-01 h1 {
+        font-size: 35px;
+    }
+    main .sec-01 p {
+        font-size: 20px;
+    }
+    main .sec-02 .card {
+        width: 300px;
+    }
 }
