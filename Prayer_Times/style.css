@@ -21,11 +21,13 @@ body {
     display: flex;
     justify-content: center;
 }
-.parent .date {
+.parent .dates {
     font-size: 30px;
     font-weight: bold;
-    margin: 15px auto;
-    width: fit-content;
+    margin: 25px auto 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 .parent .timings {
     display: flex;
@@ -58,4 +60,16 @@ select {
     border-radius: 8px;
     padding: 4px 7px;
     outline: none;
+}
+@media (max-width: 576px) {
+    .parent .title {
+        padding: 8px 15px;
+        width: 300px;
+    }
+    .parent .timings > div {
+        width: 250px;
+    }
+    .parent .dates {
+        font-size: 25px;
+    }
 }

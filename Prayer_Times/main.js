@@ -27,6 +27,8 @@ function fetchPrayerTimes() {
         response.data.data.timings.Isha;
         document.querySelector(".date").innerHTML =
           response.data.data.date.gregorian.date;
+        document.querySelector(".day").innerHTML =
+          response.data.data.date.hijri.weekday.ar;
     })
     .catch(function (error) {
       console.log(error);
