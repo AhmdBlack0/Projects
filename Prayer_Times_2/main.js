@@ -4,36 +4,32 @@ function ci() {
 }
 
 function fetchPrayerTimes() {
-  let xhr = new XMLHttpRequest();
   let city = ci();
   let url = `http://api.aladhan.com/v1/timingsByCity?country=EG&city=${city}`;
 
-  xhr.open("GET", url, true);
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      let prayerData = data.data;
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      let response = JSON.parse(xhr.responseText);
-      let data = response.data;
-
-      console.log(data);
-      document.querySelector(".fajr .time").innerHTML = data.timings.Fajr;
-      document.querySelector(".sunrise .time").innerHTML = data.timings.Sunrise;
-      document.querySelector(".dhuhr .time").innerHTML = data.timings.Dhuhr;
-      document.querySelector(".asr .time").innerHTML = data.timings.Asr;
-      document.querySelector(".maghrib .time").innerHTML = data.timings.Maghrib;
-      document.querySelector(".isha .time").innerHTML = data.timings.Isha;
-      document.querySelector(".date").innerHTML = data.date.gregorian.date;
-      document.querySelector(".day").innerHTML = data.date.hijri.weekday.ar;
-    } else if (xhr.readyState === 4) {
-      console.log("Error:", xhr.statusText);
-    }
-  };
-
-  xhr.onerror = function () {
-    console.log("Request failed");
-  };
-
-  xhr.send();
+      console.log(prayerData);
+      document.querySelector(".fajr .time").innerHTML = prayerData.timings.Fajr;
+      document.querySelector(".sunrise .time").innerHTML = prayerData.timings.Sunrise;
+      document.querySelector(".dhuhr .time").innerHTML = prayerData.timings.Dhuhr;
+      document.querySelector(".asr .time").innerHTML = prayerData.timings.Asr;
+      document.querySelector(".maghrib .time").innerHTML = prayerData.timings.Maghrib;
+      document.querySelector(".isha .time").innerHTML = prayerData.timings.Isha;
+      document.querySelector(".date").innerHTML = prayerData.date.gregorian.date;
+      document.querySelector(".day").innerHTML = prayerData.date.hijri.weekday.ar;
+    })
+    .catch((error) => {
+      console.error("Fetch error:", error);
+    });
 }
 
 // Event listener to fetch prayer times when a city is selected
