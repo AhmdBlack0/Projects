@@ -5,7 +5,7 @@ function ci() {
 
 function fetchPrayerTimes() {
   let city = ci();
-  let url = `http://api.aladhan.com/v1/timingsByCity?country=EG&city=${city}`;
+  let url = `https://api.aladhan.com/v1/timingsByCity?country=EG&city=${city}`;
 
   fetch(url)
     .then((response) => {
