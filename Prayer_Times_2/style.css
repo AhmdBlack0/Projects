@@ -65,6 +65,7 @@ select {
     .parent .title {
         padding: 8px 15px;
         width: 300px;
+        font-size: 45px;
     }
     .parent .timings > div {
         width: 250px;
