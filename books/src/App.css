@@ -1,0 +1,118 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  background-color: #eee;
+}
+
+.add-book {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #00BCD4;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-book span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* Overlay to cover the screen */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it overlays everything */
+}
+
+/* Centered textarea content */
+.overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+/* Textarea styling */
+.book-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Close button */
+.close-btn, .update-btn {
+margin-top: 10px;
+    padding: 8px 10px;
+    background-color: #00BCD4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.update-btn {
+  margin-right: 10px;
+}
+
+.close-btn:hover, .update-btn:hover {
+
+    opacity: .7;
+}
+
+.book-list {
+  display: flex;
+    flex-direction: column;
+    width: 310px;
+    margin: 50px auto;
+}
+
+.book-item div p {
+  line-height: 1.4;
+  font-size: 18px;
+  margin-top: 15px;
+}
+.book-item div img {
+      width: 100px;
+    height: 100px;
+    display: block;
+    margin: 13px auto;
+    border-radius: 50%;
+}
+.book-item h2 {
+  cursor: pointer;
+}
+
+hr {
+  margin: 25px auto;
+}
+
+.edit-btn {
+  margin: 10px 0 0;
+}
