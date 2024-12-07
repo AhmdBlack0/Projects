@@ -148,16 +148,29 @@ strong {
     font-size: 12px;
 }
 
+button:hover {
+    background-color: #3F51B5;
+    color: white;
+}
+
 @media (max-width: 767px) {
     .dashboard-container {
         height: 100%;
     }
+    .profile-container {
+        margin: 75px 50px;
+    }
     .profile-content {
         flex-direction: column;
     }
-}
-
-button:hover {
-    background-color: #3F51B5;
-    color: white;
+    .sidebar {
+        max-width: 35px;
+    }
+    .sidebar div a span {
+        display: none;
+    }
+    .sidebar div a i {
+        display: block;
+        margin: auto;
+    }
 }
